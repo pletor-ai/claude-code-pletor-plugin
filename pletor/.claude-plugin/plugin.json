@@ -1,0 +1,12 @@
+{
+  "name": "pletor",
+  "version": "0.1.0",
+  "description": "Run AI workflows, manage assets, and explore templates on Pletor — directly from Claude.",
+  "author": {
+    "name": "Pletor"
+  },
+  "homepage": "https://pletor.ai",
+  "repository": "https://github.com/pletor-ai/claude-code-pletor-plugin",
+  "license": "Apache-2.0",
+  "keywords": ["ai", "workflow", "automation", "image-generation", "video", "mcp"]
+}
