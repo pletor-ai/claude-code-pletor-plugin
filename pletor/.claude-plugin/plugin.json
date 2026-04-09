@@ -1,6 +1,6 @@
 {
   "name": "pletor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run AI workflows, manage assets, and explore templates on Pletor — directly from Claude.",
   "author": {
     "name": "Pletor"
