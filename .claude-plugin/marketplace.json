@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-pletor-plugins",
+  "name": "claude-code-pletor-plugins",
   "description": "Claude Code plugins for the Pletor AI workflow platform — run workflows, manage assets, and explore templates.",
   "owner": {
     "name": "Pletor",

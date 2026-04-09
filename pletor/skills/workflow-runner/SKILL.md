@@ -22,7 +22,7 @@ Activate when the user:
 
 ### Running a Workflow
 
-1. **Search** — Call `search_workflows` with the user's query. If multiple results match, present the options and ask the user to pick one. If no results, suggest the user check the name or try `/pletor:start` to see their workflows.
+1. **Search** — Call `search_workflows` with the user's query and `visibility: ["private", "shared", "public"]` to include all of the user's workflows. Prioritize private workflows first when presenting results. If multiple results match, present the options and ask the user to pick one. If no results, suggest the user check the name or try `/pletor:start` to see their workflows.
 
 2. **Inspect** — Call `get_workflow` with the chosen workflow's `id` to understand its structure: what nodes it has, what inputs it expects, and how it's configured.
 
