@@ -35,7 +35,7 @@ Activate when the user:
 
 5. **Execute** — Call `run_workflow` with `flow_id` and `flow_input`. Tell the user the workflow has started. Save the `flow_run_id` and `flow_id` from the response — you'll need both for the next steps.
 
-6. **Poll** — Call `get_flow_run_status` with the `flow_run_id` to check progress. Report updates naturally: "Still processing...", "Almost done — 3 of 4 nodes complete." Poll every few seconds until the status is terminal (`completed`, `failed`, or `cancelled`).
+6. **Poll** — Call `get_flow_run_status` with the `flow_run_id` to check progress. Report updates naturally: "Still processing...", "Almost done — 3 of 4 nodes complete." Wait at least 15 seconds between polls. Continue until the status is terminal (`completed`, `failed`, or `cancelled`).
 
 7. **Results** — On completion:
    - Briefly summarize what was produced (e.g., "Your workflow generated 4 images")
