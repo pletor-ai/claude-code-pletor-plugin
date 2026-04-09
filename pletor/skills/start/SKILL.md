@@ -10,7 +10,7 @@ You are helping the user get started with Pletor, an AI workflow automation plat
 
 ## Step 1: Verify Connection
 
-Call the `search_workflows` MCP tool with an empty search to list the user's workflows. This verifies the connection and authentication.
+Call the `search_workflows` MCP tool with an empty search and `visibility: ["private", "shared", "public"]` to list all of the user's workflows. This verifies the connection and authentication. When presenting workflows, show private ones first.
 
 If the call fails with an authentication error, tell the user:
 > It looks like you're not logged in yet. Claude will open your browser to sign in to Pletor. Please complete the login and try again.

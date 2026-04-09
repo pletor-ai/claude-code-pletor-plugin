@@ -59,7 +59,7 @@ In Claude Code, run:
 claude plugin marketplace add pletor-ai/claude-code-pletor-plugin
 
 # Install the plugin
-claude plugin install pletor@claude-pletor-plugins
+claude plugin install pletor@claude-code-pletor-plugins
 ```
 
 Then type `/pletor:start` to get oriented.
