@@ -52,6 +52,20 @@ Once installed, just talk to Claude:
 
 ## 📦 Installation
 
+In Claude Cowork:
+
+Go to Customize -> Personal plugins -> Create plugin -> Add marketplace -> Paste the following
+```
+https://github.com/pletor-ai/claude-code-pletor-plugin
+```
+Then Personal plugins -> Browse plugins -> Personal -> Add Pletor plugin
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/99a9e293-4bf3-4ba2-9a01-84b51b00d0cf" width="600">
+</p>
+
+
+
 In Claude Code, run:
 
 ```bash
