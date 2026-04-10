@@ -60,8 +60,9 @@ https://github.com/pletor-ai/claude-code-pletor-plugin
 ```
 Then Personal plugins -> Browse plugins -> Personal -> Add Pletor plugin
 
-![2026-04-10 12 56 05](https://github.com/user-attachments/assets/99a9e293-4bf3-4ba2-9a01-84b51b00d0cf)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/99a9e293-4bf3-4ba2-9a01-84b51b00d0cf" width="600">
+</p>
 
 
 
