@@ -54,16 +54,15 @@ Once installed, just talk to Claude:
 
 In Claude Cowork:
 
-Go to Customize -> Personal plugins -> Create plugin -> Add marketplace
-
+Go to Customize -> Personal plugins -> Create plugin -> Add marketplace -> Paste the following
 ```
-Paste https://github.com/pletor-ai/claude-code-pletor-plugin in the marketplace
+https://github.com/pletor-ai/claude-code-pletor-plugin
 ```
-![2026-04-10 12 56 05](https://github.com/user-attachments/assets/99a9e293-4bf3-4ba2-9a01-84b51b00d0cf | width=70)
-
 Then Personal plugins -> Browse plugins -> Personal -> Add Pletor plugin
 
-![2026-04-10 12 57 01](https://github.com/user-attachments/assets/765aa3f9-f42b-47a1-84e0-7619084b421d | width=70)
+![2026-04-10 12 56 05](https://github.com/user-attachments/assets/99a9e293-4bf3-4ba2-9a01-84b51b00d0cf)
+
+
 
 
 In Claude Code, run:
