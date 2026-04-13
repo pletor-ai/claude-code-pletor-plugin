@@ -24,11 +24,13 @@ Activate when:
 | "Could not determine MIME type" | No Content-Type header or unknown file extension | Pass `mime_type` explicitly (e.g., `image/jpeg`, `video/mp4`). |
 | Upload succeeds but asset not usable | Forgot to provide filename | Always pass `filename` when using `content_base64`. |
 
-## Authentication Errors
+## Authentication and Connection Errors
 
 | Symptom | Fix |
 |---------|-----|
-| 401 from any operation | MCP token expired. Ask the user to re-authenticate with Pletor. |
+| `search_workflows` or other Pletor tool not found | Pletor MCP server isn't connected. Tell the user to run `/mcp` and enable Pletor. If not listed, they need to install the plugin first. |
+| MCP call routed to wrong server (not Pletor) | Wrong MCP server is active. Tell the user to run `/mcp`, disable conflicting servers, and make sure Pletor is selected. |
+| 401 from any operation | MCP token expired. Tell the user to run `/mcp`, select Pletor, and re-authenticate. |
 | "fetch failed" or network error | Backend API not reachable. Ask the user to check if Pletor is running. |
 
 ## Workflow Input Format Errors

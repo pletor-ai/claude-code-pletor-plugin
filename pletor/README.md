@@ -5,8 +5,8 @@ Run AI workflows, manage assets, and explore templates on [Pletor](https://pleto
 ## Installation
 
 ```bash
-claude plugin marketplace add pletor-ai/plugins
-claude plugin install pletor@pletor-plugins
+claude plugin marketplace add pletor-ai/claude-code-pletor-plugin
+claude plugin install pletor@claude-code-pletor-plugins
 ```
 
 ## Getting Started
