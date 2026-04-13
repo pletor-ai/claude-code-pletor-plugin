@@ -8,20 +8,30 @@ user-invocable: true
 
 You are helping the user get started with Pletor, an AI workflow automation platform. Follow these steps:
 
+## Before You Begin
+
+Tell the user:
+> Before connecting, make sure the Pletor MCP server is enabled. Run `/mcp` in Claude Code, find **Pletor** in the list, and confirm it shows as connected. If you don't see it, install the Pletor plugin first.
+
 ## Step 1: Verify Connection
 
-Call the `search_workflows` MCP tool with an empty search and `visibility: ["private", "shared", "public"]` to list all of the user's workflows. This verifies the connection and authentication. When presenting workflows, show private ones first.
+Call the `search_workflows` MCP tool with an empty search and `visibility: ["private"]` to list only the user's private workflows. This verifies the connection and authentication.
 
-If the call fails with an authentication error, tell the user:
-> It looks like you're not logged in yet. Claude will open your browser to sign in to Pletor. Please complete the login and try again.
+If the call fails, identify which error occurred and respond with the matching guidance:
+
+| Failure | How to detect | What to tell the user |
+|---|---|---|
+| Pletor MCP server not found | The `search_workflows` tool is not available or no matching MCP tool exists | "The Pletor MCP server isn't connected. Run `/mcp`, look for **Pletor**, and enable it. If it's not listed, install the plugin first — see the [README](https://github.com/pletor-ai/claude-code-pletor-plugin) for instructions." |
+| Wrong MCP server used | The call was routed to a server that is not Pletor | "It looks like the wrong MCP server was used. Run `/mcp` and make sure **Pletor** is the one enabled — disable any other servers that might conflict." |
+| Expired or invalid token | Auth error such as 401 or "requires re-authorization" | "Your Pletor session has expired. Run `/mcp`, select **Pletor**, and re-authenticate. Your browser will open to sign in." |
 
 ## Step 2: Show Summary
 
-Once you have the workflow list, present a friendly summary:
+Once you have the private workflow list, present a friendly summary:
 
-- How many workflows the user has
+- How many private workflows the user has
 - List the first 5 workflows by name with a brief description of each
-- If the user has no workflows, suggest they explore templates
+- If the user has no private workflows, ask if they would like to see shared and public workflows instead. If they say yes, call `search_workflows` with `visibility: ["shared", "public"]` and present those results.
 
 ## Step 3: Show What's Possible
 
