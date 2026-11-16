@@ -1,49 +1,46 @@
 ---
 name: start
-description: Get started with Pletor. Shows your workflows, explains what you can do, and verifies your connection.
+description: Get started with Pletor. Verifies your connection, shows your workflows, Brains and credits, and explains what you can do.
 user-invocable: true
 ---
 
 # Welcome to Pletor
 
-You are helping the user get started with Pletor, an AI workflow automation platform. Follow these steps:
+You are helping the user get started with Pletor, a platform for generating on-brand images, video, speech and music, and for building and running AI workflows (flows).
 
-## Before You Begin
+## Step 1: Verify the connection
 
-Tell the user:
-> Before connecting, make sure the Pletor MCP server is enabled. Run `/mcp` in Claude Code, find **Pletor** in the list, and confirm it shows as connected. If you don't see it, install the Pletor plugin first.
+Call `search_workflows` with `visibility: ["private"]`. This checks the connection and authentication.
 
-## Step 1: Verify Connection
-
-Call the `search_workflows` MCP tool with an empty search and `visibility: ["private"]` to list only the user's private workflows. This verifies the connection and authentication.
-
-If the call fails, identify which error occurred and respond with the matching guidance:
+If the call fails, match the failure and tell the user:
 
 | Failure | How to detect | What to tell the user |
 |---|---|---|
-| Pletor MCP server not found | The `search_workflows` tool is not available or no matching MCP tool exists | "The Pletor MCP server isn't connected. Run `/mcp`, look for **Pletor**, and enable it. If it's not listed, install the plugin first — see the [README](https://github.com/pletor-ai/claude-code-pletor-plugin) for instructions." |
-| Wrong MCP server used | The call was routed to a server that is not Pletor | "It looks like the wrong MCP server was used. Run `/mcp` and make sure **Pletor** is the one enabled — disable any other servers that might conflict." |
-| Expired or invalid token | Auth error such as 401 or "requires re-authorization" | "Your Pletor session has expired. Run `/mcp`, select **Pletor**, and re-authenticate. Your browser will open to sign in." |
+| Pletor tools missing | No `search_workflows` tool is available | "The Pletor MCP server isn't connected. Run `/mcp`, find the **pletor** plugin entry, and connect it. If it isn't listed, install the plugin first: see the [README](https://github.com/pletor-ai/claude-code-pletor-plugin)." |
+| Connection failed | `/mcp` shows the **pletor** plugin entry as failed | "Your Pletor plugin may be out of date. If you installed it from Claude Code, run `claude plugin marketplace update claude-code-pletor-plugins`, then `claude plugin update pletor@claude-code-pletor-plugins`, and restart. If you added it on claude.ai, remove it and add it again from the marketplace there." |
+| Expired session | A 401 or "requires re-authorization" error | "Your Pletor session has expired. Run `/mcp`, select the **pletor** plugin entry, and sign in again in your browser." |
 
-## Step 2: Show Summary
+## Step 2: Show where they stand
 
-Once you have the private workflow list, present a friendly summary:
+Call `list_brains` and `check_balance`, then give a short summary:
 
-- How many private workflows the user has
-- List the first 5 workflows by name with a brief description of each
-- If the user has no private workflows, ask if they would like to see shared and public workflows instead. If they say yes, call `search_workflows` with `visibility: ["shared", "public"]` and present those results.
+- How many private workflows they have, with the first five by name and a one-line description each. If they have none, offer to show the public gallery with `search_workflows` and `visibility: ["public"]`.
+- Their Brains by name. If they have none, explain that a Brain holds a brand's identity, brand kit and products so every generation comes out on-brand, and offer to build one from their website.
+- Their credit balance.
 
-## Step 3: Show What's Possible
+If they belong to more than one workspace (`list_my_organizations`), say which one you're looking at.
 
-Tell the user they can interact with Pletor using natural language. Give these examples:
+## Step 3: Show what's possible
 
-- **Run a workflow:** "Run my image generation workflow" or "Execute [workflow name]"
-- **Upload assets:** "Upload this image and use it in my workflow"
-- **Check status:** "What's the status of my last run?" or "Show me the results"
-- **Find templates:** "Find a template for product photography" or "What templates are available?"
-- **Explore models:** "What AI models are available?" or "Find a model for video generation"
-- **Get help:** "How does the [node type] node work?" or "Search the docs for [topic]"
+Tell them they can just ask in plain language, for example:
+
+- **Generate:** "Make a product shot of this bottle on a marble counter" or "Turn this image into a 5-second video"
+- **Remember a brand:** "Build a Brain from acme.com" or "Remember that our logo is always on white"
+- **Run a workflow or app:** "Run my AI photographer workflow on these three photos"
+- **Build a workflow:** "Build a flow that turns a product photo into four lifestyle shots"
+- **Check a run:** "Why did my last run fail?"
+- **Get help:** "How does the upscale node work?"
 
 ## Tone
 
-Keep your responses warm, concise, and encouraging. The user may be non-technical — avoid jargon and explain things simply.
+Warm, short and plain. The user may not be technical, so avoid jargon.
