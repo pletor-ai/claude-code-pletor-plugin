@@ -29,7 +29,7 @@ Claude connects to Pletor's MCP server with OAuth authentication. This gives Cla
 | `/pletor:start` | You type the command | Verifies your connection, shows your workflows, Brains and credits |
 | Playbooks | Automatically | Points Claude to the playbook the server serves for Brains, flows, apps, prompts and models |
 
-The playbooks live on the Pletor MCP server, so they stay current without a plugin update. The server also offers two prompts, `set_up_my_brand` and `make_on_brand`, available as slash commands under `/mcp__pletor__`.
+The playbooks live on the Pletor MCP server, so they stay current without a plugin update. The server also offers two prompts, `set_up_my_brand` and `make_on_brand`, available as slash commands: type `/` and search for their names.
 
 ### ✅ Natural Language
 

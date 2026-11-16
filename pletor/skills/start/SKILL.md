@@ -16,9 +16,9 @@ If the call fails, match the failure and tell the user:
 
 | Failure | How to detect | What to tell the user |
 |---|---|---|
-| Pletor tools missing | No `search_workflows` tool is available | "The Pletor MCP server isn't connected. Run `/mcp`, find **pletor**, and connect it. If it isn't listed, install the plugin first: see the [README](https://github.com/pletor-ai/claude-code-pletor-plugin)." |
-| Connection failed | `/mcp` shows **pletor** as failed | "Your Pletor plugin may be out of date. If you installed it from Claude Code, run `claude plugin marketplace update claude-code-pletor-plugins`, then `claude plugin update pletor@claude-code-pletor-plugins`, and restart. If you added it on claude.ai, remove it and add it again from the marketplace there." |
-| Expired session | A 401 or "requires re-authorization" error | "Your Pletor session has expired. Run `/mcp`, select **pletor**, and sign in again in your browser." |
+| Pletor tools missing | No `search_workflows` tool is available | "The Pletor MCP server isn't connected. Run `/mcp`, find the **pletor** plugin entry, and connect it. If it isn't listed, install the plugin first: see the [README](https://github.com/pletor-ai/claude-code-pletor-plugin)." |
+| Connection failed | `/mcp` shows the **pletor** plugin entry as failed | "Your Pletor plugin may be out of date. If you installed it from Claude Code, run `claude plugin marketplace update claude-code-pletor-plugins`, then `claude plugin update pletor@claude-code-pletor-plugins`, and restart. If you added it on claude.ai, remove it and add it again from the marketplace there." |
+| Expired session | A 401 or "requires re-authorization" error | "Your Pletor session has expired. Run `/mcp`, select the **pletor** plugin entry, and sign in again in your browser." |
 
 ## Step 2: Show where they stand
 

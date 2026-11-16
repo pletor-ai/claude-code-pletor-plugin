@@ -7,6 +7,7 @@ known=$(curl -sf -X POST \
   -H "Accept: application/json, text/event-stream" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
   https://api.pletor.ai/mcp | jq -r '.result.tools[].name')
+[ -n "$known" ] || { echo "could not fetch tools/list from https://api.pletor.ai/mcp"; exit 2; }
 
 cited=$(grep -rhoE '`[a-z]+(_[a-z]+)+`' "$root/README.md" "$root/pletor" | tr -d '`' | sort -u)
 

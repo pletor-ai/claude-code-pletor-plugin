@@ -31,7 +31,7 @@ The playbooks themselves live on the Pletor MCP server, so they stay current wit
 - **Assets:** upload local files or public URLs, search your assets
 - **Help:** search the Pletor docs, find models, check your credit balance
 
-The server also offers two prompts, `set_up_my_brand` and `make_on_brand`, available as slash commands under `/mcp__pletor__`.
+The server also offers two prompts, `set_up_my_brand` and `make_on_brand`, available as slash commands: type `/` and search for their names.
 
 ## Authentication
 
