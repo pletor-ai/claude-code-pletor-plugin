@@ -75,7 +75,7 @@ claude plugin install pletor@claude-code-pletor-plugins
 
 Then type `/pletor:start` to get oriented.
 
-To pick up a new version:
+To pick up a new version in Claude Code (a copy added on claude.ai is updated there):
 
 ```bash
 claude plugin marketplace update claude-code-pletor-plugins

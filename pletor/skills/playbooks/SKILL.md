@@ -17,8 +17,8 @@ The Pletor MCP server serves its own playbooks and keeps them current. Read the 
 
 Call either tool with no arguments to list every playbook it holds.
 
-## Claude Code specifics
+## Good habits
 
 - **Local files:** upload with `prepare_media_upload`, run the `curl` command it returns, then call `confirm_media_upload`. Use `upload_asset` only for a public URL.
-- **No interactive views here:** don't call `display_media` or `upload_media`. Share the returned `app_url` or asset URL as a link.
 - **Runs:** wait with `get_flow_run_status` until the run finishes, and explain any failure with `diagnose_run` before retrying.
+- **Host rules:** follow the Pletor server's own instructions on whether to show results inline or as links.

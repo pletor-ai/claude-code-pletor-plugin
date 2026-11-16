@@ -13,7 +13,7 @@ cited=$(grep -rhoE '`[a-z]+(_[a-z]+)+`' "$root/README.md" "$root/pletor" | tr -d
 missing=0
 for name in $cited; do
   case "$name" in
-    set_up_my_brand|make_on_brand|app_url) continue ;;
+    set_up_my_brand|make_on_brand) continue ;;
   esac
   if ! printf '%s\n' "$known" | grep -qx "$name"; then
     echo "not a live tool: $name"
