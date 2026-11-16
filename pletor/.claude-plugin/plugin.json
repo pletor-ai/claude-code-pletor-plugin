@@ -1,6 +1,6 @@
 {
   "name": "pletor",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Generate on-brand images, video, speech and music, manage brand Brains, and build and run AI workflows on Pletor, directly from Claude.",
   "author": {
     "name": "Pletor"
