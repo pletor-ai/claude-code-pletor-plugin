@@ -2,9 +2,8 @@
 
 This repository provides an official Claude Code plugin that bundles:
 
-- **Pletor Skills** that teach Claude how to run AI workflows, upload assets, and explore models
-- The **Pletor MCP Server**, which enables Claude to securely execute workflows and manage assets on your Pletor workspace
-- **Automatic troubleshooting** that helps Claude recover from errors without guessing
+- The **Pletor MCP Server**, which lets Claude generate on-brand media, manage Brains, and build and run workflows on your Pletor workspace
+- **Pletor Skills** that get you started and point Claude to the playbooks the server keeps up to date
 
 Works with [Claude Code](https://claude.com/product/claude-code) and [Claude Cowork](https://claude.ai/cowork).
 
@@ -16,23 +15,21 @@ Works with [Claude Code](https://claude.com/product/claude-code) and [Claude Cow
 
 Claude connects to Pletor's MCP server with OAuth authentication. This gives Claude tools to:
 
-- Run AI workflows and poll for results
-- Upload files from URLs, local paths, or base64 content
-- Browse templates and discover AI models
-- Inspect node schemas and workflow structure
-- Search documentation and tutorials
+- Generate images, video, speech and music; edit, upscale and remove backgrounds
+- Build a Brain that holds a brand's identity, brand kit and products, and ground every generation in it
+- Search, run, batch and diagnose workflows
+- Build and edit flows that you watch take shape live in Pletor
+- Find and run published apps
+- Upload local files or public URLs, search assets, find models, search the docs and check credits
 
 ### ✅ Skills
 
-Skills teach Claude how to combine individual tools into complete workflows.
-
 | Skill | How it activates | What it does |
 |-------|-----------------|--------------|
-| `/pletor:start` | You type the command | Shows your workflows, verifies your connection |
-| Workflow Runner | Automatically | Discovers input schemas, runs workflows, polls status, shares results |
-| Asset Manager | Automatically | Uploads files (URL, local path, or base64), discovers AI models |
-| Tool Guide | Automatically | Searches documentation, finds templates, explains node capabilities |
-| Troubleshooter | Automatically | Diagnoses errors across all operations, prevents blind retries |
+| `/pletor:start` | You type the command | Verifies your connection, shows your workflows, Brains and credits |
+| Playbooks | Automatically | Points Claude to the playbook the server serves for Brains, flows, apps, prompts and models |
+
+The playbooks live on the Pletor MCP server, so they stay current without a plugin update. The server also offers two prompts, `set_up_my_brand` and `make_on_brand`, available as slash commands under `/mcp__pletor__`.
 
 ### ✅ Natural Language
 
@@ -40,13 +37,13 @@ Once installed, just talk to Claude:
 
 | What you want | What to say |
 |---------------|-------------|
-| Run a workflow | "Run my AI photographer workflow with this image" |
-| Upload and use | "Upload this product photo and run the background removal workflow on it" |
-| Batch process | "Run the AI photographer once for each photo from my Notion page" |
-| Check a run | "What's the status of my last run?" |
-| Find templates | "Find a template for product photography" |
-| Explore models | "What models are available for video generation?" |
-| Fix an error | "The workflow failed, help me figure out why" |
+| Generate | "Make a product shot of this bottle on a marble counter" |
+| Remember a brand | "Build a Brain from acme.com" |
+| Stay on-brand | "Make three Instagram visuals for our winter launch" |
+| Run a workflow | "Run my AI photographer workflow on these three photos" |
+| Build a workflow | "Build a flow that turns a product photo into four lifestyle shots" |
+| Run an app | "Run the background removal app on this image" |
+| Fix an error | "My last run failed, help me figure out why" |
 
 ---
 
@@ -77,6 +74,13 @@ claude plugin install pletor@claude-code-pletor-plugins
 ```
 
 Then type `/pletor:start` to get oriented.
+
+To pick up a new version:
+
+```bash
+claude plugin marketplace update claude-code-pletor-plugins
+claude plugin update pletor@claude-code-pletor-plugins
+```
 
 ---
 

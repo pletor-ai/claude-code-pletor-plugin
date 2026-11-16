@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-code-pletor-plugins",
-  "description": "Claude Code plugins for the Pletor AI workflow platform — run workflows, manage assets, and explore templates.",
+  "description": "Claude Code plugins for Pletor: on-brand media generation, brand Brains, and AI workflows.",
   "owner": {
     "name": "Pletor",
     "email": "support@pletor.ai"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "pletor",
-      "description": "Run AI workflows, manage assets, and explore templates on Pletor — directly from Claude.",
+      "description": "Generate on-brand images, video, speech and music, manage brand Brains, and build and run AI workflows on Pletor, directly from Claude.",
       "category": "productivity",
       "source": "./pletor",
       "homepage": "https://pletor.ai"

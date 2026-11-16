@@ -1,12 +1,12 @@
 {
   "name": "pletor",
-  "version": "0.1.2",
-  "description": "Run AI workflows, manage assets, and explore templates on Pletor — directly from Claude.",
+  "version": "0.2.0",
+  "description": "Generate on-brand images, video, speech and music, manage brand Brains, and build and run AI workflows on Pletor, directly from Claude.",
   "author": {
     "name": "Pletor"
   },
   "homepage": "https://pletor.ai",
   "repository": "https://github.com/pletor-ai/claude-code-pletor-plugin",
   "license": "Apache-2.0",
-  "keywords": ["ai", "workflow", "automation", "image-generation", "video", "mcp"]
+  "keywords": ["ai", "workflow", "automation", "image-generation", "video", "brand", "mcp"]
 }
